@@ -14,7 +14,7 @@
 
     </nav>
     <div class="bg-kid-purple p-3 rounded-3 me-1">
-        <a href="#" class="sidebar_reward bg-kid-yellow px-3 py-2 rounded-2 d-flex gap-2 align-items-center">
+        <a href="#" class="sidebar_reward bg-kid-yellow px-3 py-2 rounded-2 d-flex gap-2 hover-boxshadow hover-bg-kid-yellow align-items-center">
             <span aria-hidden="true" class="fs-1">🎁</span>
             <span class="text-body fw-bold fs-6" style="line-height: 1.1em">Phần thưởng<br>hằng ngày</span>
         </a>

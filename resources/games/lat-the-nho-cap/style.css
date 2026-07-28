@@ -3,6 +3,7 @@
     flex-direction: column;
     gap: 16px;
     max-width: 450px;
+    margin: 0 auto;
 }
 
 .memory-game-stats {

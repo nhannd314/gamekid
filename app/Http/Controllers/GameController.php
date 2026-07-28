@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Game;
-use Illuminate\Http\Request;
 
 class GameController extends Controller
 {
@@ -11,6 +10,8 @@ class GameController extends Controller
     {
         $game->load('categories');
 
-        return view('game', compact('game'));
+        $topScores = $game->scores()->with('user')->orderByDesc('best_score')->limit(10)->get();
+
+        return view('game', compact('game', 'topScores'));
     }
 }

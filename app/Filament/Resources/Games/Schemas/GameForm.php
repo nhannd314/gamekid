@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\Games\Schemas;
 
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Radio;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
@@ -15,34 +16,47 @@ class GameForm
     {
         return $schema
             ->components([
-                Select::make('game_category_id')
-                    ->relationship('gameCategory', 'name'),
                 TextInput::make('name')
                     ->required(),
                 TextInput::make('slug')
                     ->disabled()
                     ->dehydrated(false),
-                TextInput::make('sort_order')
-                    ->required()
-                    ->numeric()
-                    ->default(0),
-                Textarea::make('description')
-                    ->rows(6)
-                    ->columnSpanFull(),
-                //TextInput::make('config'),
+                Select::make('categories')
+                    ->relationship('categories', 'name')
+                    ->multiple()
+                    ->preload(),
+                Select::make('genres')
+                    ->relationship('genres', 'name')
+                    ->multiple()
+                    ->preload(),
+                Textarea::make('description')->rows(7),
+                FileUpload::make('thumbnail')
+                    ->image()
+                    ->directory('games')
+                    ->disk('public')
+                    ->required(),
                 Toggle::make('is_active')
                     ->required(),
                 Toggle::make('is_featured')
                     ->required(),
-                FileUpload::make('thumbnail')
-                    ->image()
-                    ->disk('public')
-                    ->directory('games')
-                    ->required(),
+                TextInput::make('sort_order')
+                    ->required()
+                    ->numeric()
+                    ->default(0),
                 TextInput::make('rating')
                     ->required()
                     ->numeric()
                     ->default(5),
+                Radio::make('ranking_order')
+                    ->options([
+                        'desc' => 'Điểm cao nhất',
+                        'asc' => 'Điểm thấp nhất',
+                    ])
+                    ->label('Cách xếp hạng')
+                    ->inline()->columnSpanFull()
+                    ->required()
+                    ->default('desc'),
+
             ]);
     }
 }

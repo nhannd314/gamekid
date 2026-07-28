@@ -15,8 +15,6 @@ class GamesTable
     {
         return $table
             ->columns([
-                TextColumn::make('gameCategory.name')
-                    ->searchable(),
                 TextColumn::make('name')
                     ->searchable(),
                 TextColumn::make('slug')
@@ -32,6 +30,8 @@ class GamesTable
                     ->sortable(),
                 IconColumn::make('is_featured')
                     ->boolean(),
+                TextColumn::make('ranking_order')
+                    ->searchable(),
                 TextColumn::make('rating')
                     ->numeric()
                     ->sortable(),

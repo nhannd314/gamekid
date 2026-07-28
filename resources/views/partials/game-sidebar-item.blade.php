@@ -7,7 +7,7 @@
     <div class="flex-grow-1 ms-3 overflow-hidden">
         <h4 class="h5 mb-1 text-truncate fw-bold">{{ $game->name }}</h4>
         <div class="mb-1">
-            <span class="badge bg-kid-purple px-2 py-1 text-white small">{{ $game->categories->pluck('name')->implode(', ') }}</span>
+            <span class="fs-sm">{{ $game->categories->pluck('name')->implode(', ') }}</span>
         </div>
         <div class="">
             <small class="text-warning">

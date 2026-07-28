@@ -43,7 +43,7 @@ test('profile information can be updated', function () {
     expect($user->name)->toBe('Tên Mới');
 });
 
-test('email cannot be changed via the profile form', function () {
+test('email can be changed via the profile form', function () {
     $user = User::factory()->create(['email' => 'original@example.com']);
 
     $response = $this->actingAs($user)->put(route('profile.update'), [
@@ -56,7 +56,40 @@ test('email cannot be changed via the profile form', function () {
 
     $user->refresh();
 
-    expect($user->email)->toBe('original@example.com');
+    expect($user->email)->toBe('changed@example.com');
+});
+
+test('email must be unique when updating the profile', function () {
+    User::factory()->create(['email' => 'taken@example.com']);
+    $user = User::factory()->create();
+
+    $response = $this->actingAs($user)->put(route('profile.update'), [
+        'name' => $user->name,
+        'phone' => $user->phone,
+        'email' => 'taken@example.com',
+    ]);
+
+    $response->assertSessionHasErrors('email');
+
+    $user->refresh();
+
+    expect($user->email)->not->toBe('taken@example.com');
+});
+
+test('profile update requires an email or a phone number', function () {
+    $user = User::factory()->create();
+
+    $response = $this->actingAs($user)->put(route('profile.update'), [
+        'name' => $user->name,
+        'email' => '',
+        'phone' => '',
+    ]);
+
+    $response->assertSessionHasErrors('email');
+
+    $user->refresh();
+
+    expect($user->email)->not->toBeNull();
 });
 
 test('users can upload an avatar', function () {

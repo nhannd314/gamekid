@@ -31,6 +31,14 @@ class AppServiceProvider extends ServiceProvider
             return Limit::perMinute(5)->by(Str::lower((string) $request->input('login')).'|'.$request->ip());
         });
 
+        RateLimiter::for('register', function (Request $request) {
+            return Limit::perMinute(5)->by($request->ip());
+        });
+
+        RateLimiter::for('password-reset', function (Request $request) {
+            return Limit::perMinute(5)->by(Str::lower((string) $request->input('email')).'|'.$request->ip());
+        });
+
         View::composer('partials.sidebar', function ($view) {
             $activeCategory = request()->route('category');
 

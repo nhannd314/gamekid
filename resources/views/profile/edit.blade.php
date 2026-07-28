@@ -43,8 +43,11 @@
 
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
-                        <input id="email" type="email" value="{{ $user->email }}" class="form-control" disabled>
-                        <div class="form-text">Email không thể thay đổi.</div>
+                        <input id="email" type="email" name="email" value="{{ old('email', $user->email) }}"
+                               class="form-control @error('email') is-invalid @enderror">
+                        @error('email')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <div class="mb-3">

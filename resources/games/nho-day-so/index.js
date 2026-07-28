@@ -1,5 +1,5 @@
 import './style.css';
-import { playTone } from '../../js/app.js';
+import { endGame, playTone } from '../../js/app.js';
 
 const BEST_SCORE_KEY = 'numberSequenceBestScore';
 const DIGIT_SHOW_MS = 700;
@@ -188,6 +188,8 @@ function initNumberSequenceGame(container) {
             bestScore = roundsCompleted;
             localStorage.setItem(BEST_SCORE_KEY, String(bestScore));
         }
+
+        endGame(roundsCompleted);
 
         updateStats();
         displayTextEl.textContent = '✗';

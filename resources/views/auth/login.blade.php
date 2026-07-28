@@ -37,6 +37,9 @@
                         @error('password')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
+                        <div class="mt-1">
+                            <a href="{{ route('password.request') }}" class="small">Quên mật khẩu?</a>
+                        </div>
                     </div>
 
                     <div class="mb-3 form-check">
@@ -46,6 +49,10 @@
 
                     <button type="submit" class="btn btn-primary w-100">Đăng nhập</button>
                 </form>
+
+                <p class="text-center mt-3 mb-0">
+                    Chưa có tài khoản? <a href="{{ route('register') }}">Đăng ký</a>
+                </p>
             </div>
         </div>
     </div>

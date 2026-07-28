@@ -1,5 +1,5 @@
 import './style.css';
-import { playTone } from '../../js/app.js';
+import { endGame, playTone } from '../../js/app.js';
 
 const EMOJIS = ['🍎', '🍌', '🍇', '🍉', '🍓', '🍒', '🍍', '🥝'];
 
@@ -168,6 +168,7 @@ function initMemoryGame(container) {
         sound.win();
         winTextEl.textContent = `Chúc mừng! Bạn đã hoàn thành sau ${moves} lượt lật.`;
         winMessage.hidden = false;
+        endGame(moves);
     }
 
     function restart() {

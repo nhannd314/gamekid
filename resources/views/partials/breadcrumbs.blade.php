@@ -1,4 +1,4 @@
-<nav aria-label="breadcrumb" class="mb-2">
+<nav aria-label="breadcrumb" class="">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('home') }}">Trang chủ</a></li>
         @foreach ($items ?? [] as $label => $url)

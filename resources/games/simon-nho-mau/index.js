@@ -1,5 +1,5 @@
 import './style.css';
-import { playTone } from '../../js/app.js';
+import { endGame, playTone } from '../../js/app.js';
 
 const COLORS = ['green', 'red', 'yellow', 'blue'];
 
@@ -167,6 +167,8 @@ function initSimonGame(container) {
             bestScore = roundsCompleted;
             localStorage.setItem(BEST_SCORE_KEY, String(bestScore));
         }
+
+        endGame(roundsCompleted);
 
         updateStats();
         messageTextEl.textContent = `Bạn đã nhớ đúng ${roundsCompleted} vòng!`;

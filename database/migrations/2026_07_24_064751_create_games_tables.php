@@ -37,6 +37,7 @@ return new class extends Migration
             $table->boolean('is_active')->default(true);
             $table->integer('sort_order')->default(0);
             $table->boolean('is_featured')->default(false);
+            $table->string('ranking_order')->default('desc');
             $table->unsignedSmallInteger('rating')->default(5);
             $table->timestamps();
         });

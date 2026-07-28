@@ -3,6 +3,7 @@
     flex-direction: column;
     gap: 16px;
     max-width: 510px;
+    margin: 0 auto;
 }
 
 .numseq-game-stats {
@@ -157,7 +158,6 @@
     justify-content: center;
     padding: 24px;
     background: rgba(74, 63, 107, .85);
-    border-radius: 42px;
     animation: numseq-message-fade .25s ease;
 }
 

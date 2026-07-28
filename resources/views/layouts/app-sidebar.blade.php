@@ -10,7 +10,7 @@
             @include('partials.sidebar')
 
         </div>
-        <div id="content" class="col main-col bg-white" style="padding: 2rem">
+        <div id="content" class="col main-col bg-kid-light p-4">
 
             @yield('content')
 

@@ -11,9 +11,13 @@ body, html {
 .bg-kid-yellow {
     background-color: $kid-yellow;
 }
+.hover-bg-kid-yellow:hover {
+    background-color: $kid-yellow-deep;
+}
 .bg-kid-light {
     background-color: $kid-light;
 }
+.fs-sm { font-size: .9375rem;}
 
 .hover-bounce {
     transition: all .3s;
@@ -26,6 +30,9 @@ body, html {
     &:hover {
         transform: scale(1.05);
     }
+}
+.hover-boxshadow:hover {
+    @extend .shadow;
 }
 
 a .title:hover {
@@ -182,18 +189,6 @@ a .title:hover {
 
 .has-sidebar #content {
     border-top-left-radius: 1rem;
-}
-
-.breadcrumb {
-    display: inline-flex;
-    background-color: $kid-light;
-    border: 2px dashed rgba($kid-purple, .35);
-    border-radius: $border-radius;
-    padding: .25rem .5rem;
-}
-
-.bg-music-toggle {
-
 }
 
 .game-content {

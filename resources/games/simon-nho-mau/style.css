@@ -3,6 +3,7 @@
     flex-direction: column;
     gap: 16px;
     max-width: 340px;
+    margin: 0 auto;
 }
 
 .simon-game-stats {
