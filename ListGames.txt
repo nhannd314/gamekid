@@ -1,0 +1,11 @@
+Nhớ vị trí (Find the hidden star)
+Nhớ thứ tự đồ vật
+Ai biến mất?
+Đổi chỗ đồ vật
+Nhớ dãy số: hiện dãy số bất kỳ sau đó yêu cầu nhập lại
+Nhớ chữ cái: hiện dãy chữ cái rồi yêu cầu nhập lại
+Đèn sáng: hiện đèn sáng 2s sau đó tắt, yêu cầu bấm lại
+Theo đường đi: hiện đường đi, mũi tên sau đó mất, hỏi thỏ đi đến đâu
+Tìm hình vừa xem: hiện nhanh hình sau đó bấm chọn
+Nhớ vị trí con vật
+Ghi nhớ trong thời gian ngắn: hiện danh sách đồ vật trong 3s rồi biến mất, yêu cầu chọn lại

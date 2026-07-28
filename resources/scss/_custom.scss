@@ -1,0 +1,201 @@
+body, html {
+    font-optical-sizing: auto!important;
+}
+
+.bg-kid-purple {
+    background-color: $kid-purple;
+}
+.bg-kid-purple-deep {
+    background-color: $kid-purple-deep;
+}
+.bg-kid-yellow {
+    background-color: $kid-yellow;
+}
+.bg-kid-light {
+    background-color: $kid-light;
+}
+
+.hover-bounce {
+    transition: all .3s;
+    &:hover {
+        transform: rotate(1deg) translateY(-5px);
+    }
+}
+.hover-scale {
+    transition: all .3s;
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+a .title:hover {
+    color: $primary;
+}
+
+.nav {
+    .link {
+        font-weight: 600;
+        padding: 6px 16px 4px 13px;
+        @extend .rounded-3;
+        transition: all .3s;
+        .icon {
+            font-size: 1.5em;
+            margin-right: 3px;
+        }
+    }
+}
+
+.header {
+    padding: 12px 0;
+
+    .logo {
+        max-width: 150px;
+
+        @include media-breakpoint-up(lg) {
+            max-width: 250px;
+        }
+    }
+
+    .navbar-toggler {
+        padding: 6px 10px;
+
+        &:focus {
+            box-shadow: none;
+        }
+    }
+
+    .navbar-collapse {
+        @include media-breakpoint-down(lg) {
+            &.show {
+                margin-top: 10px;
+                border-top: 1px solid rgba(#000, .08);
+            }
+        }
+    }
+
+    .nav {
+        .link {
+            @extend .shadow-sm;
+            color: $body-color;
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            &:hover, &.active {
+                color: #fff;
+                background-color: $kid-purple;
+            }
+        }
+    }
+}
+
+.sidebar-col {
+    flex: 0 0 100%;
+    max-width: 100%;
+
+    @include media-breakpoint-up(lg) {
+        flex: 0 0 20%;
+        max-width: 20%;
+    }
+}
+
+.main-col {
+    flex: 0 0 100%;
+    max-width: 100%;
+
+    @include media-breakpoint-up(lg) {
+        flex: 0 0 80%;
+        max-width: 80%;
+    }
+}
+
+.sidebar {
+    .nav {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        -webkit-overflow-scrolling: touch;
+
+        @include media-breakpoint-up(lg) {
+            overflow-x: visible;
+            flex-wrap: wrap;
+        }
+
+        .link {
+            color: #fff;
+            padding: 6px 12px 6px 15px;
+            font-size: 1.1rem;
+            &:first-letter {
+                font-size: 1.4em;
+                margin-right: 2px;
+            }
+            &:hover, &.active {
+                background: $kid-purple;
+            }
+        }
+    }
+}
+
+.hero {
+    .bg img {
+        display: block;
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        object-position: center;
+
+        @include media-breakpoint-up(sm) {
+            height: 320px;
+        }
+
+        @include media-breakpoint-up(lg) {
+            height: auto;
+            object-fit: initial;
+        }
+    }
+
+    .text-box {
+        width: 100%;
+        max-width: 700px;
+    }
+
+    .hero-title {
+        font-weight: 900;
+        font-size: 2.5rem;
+        line-height: 1.2;
+
+        @include media-breakpoint-up(md) {
+            font-size: 3rem;
+        }
+
+        @include media-breakpoint-up(lg) {
+            font-size: 3.75rem;
+        }
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+
+        @include media-breakpoint-up(lg) {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+.has-sidebar #content {
+    border-top-left-radius: 1rem;
+}
+
+.breadcrumb {
+    display: inline-flex;
+    background-color: $kid-light;
+    border: 2px dashed rgba($kid-purple, .35);
+    border-radius: $border-radius;
+    padding: .25rem .5rem;
+}
+
+.bg-music-toggle {
+
+}
+
+.game-content {
+    min-height: 420px;
+}

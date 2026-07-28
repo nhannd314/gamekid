@@ -1,0 +1,76 @@
+// KiddoPlay theme — override Bootstrap defaults (!default)
+
+// Brand colors
+$primary: #543ed0;
+$secondary: #fa4675;
+//$success: #4caf50;
+//$info: #4dbfff;
+//$warning: #ffb800;
+//$danger: #ff6b9d;
+//$light: #f4f7fc;
+//$dark: #2d3a5c;
+
+// Custom palette (available in app.scss)
+$kid-purple: #9070fb;
+$kid-purple-deep: #6649d0;
+$kid-yellow: #fce998;
+$kid-navy: #061b54;
+$kid-light: #e3f2fd;
+
+// Typography — rounded, friendly
+$font-family-sans-serif: "Baloo Bhaijaan 2", sans-serif;
+$font-size-base: 1rem;
+//$line-height-base: 1.5;
+$font-weight-normal: 500;
+//$headings-font-family: "Huninn";
+$headings-font-weight: 600;
+$h6-font-size: $font-size-base * 1.125;
+$headings-color: $kid-navy;
+
+$link-decoration: none;
+
+// Body
+//$body-bg: $kid-bg;
+//$body-color: $kid-navy;
+
+// Border radius — bubbly UI
+$border-radius: 1rem;
+$border-radius-sm: 0.75rem;
+$border-radius-lg: 1.5rem;
+$border-radius-xl: 2rem;
+$border-radius-2xl: 2.5rem;
+$border-radius-pill: 50rem;
+
+// Buttons
+$btn-border-radius: $border-radius-pill;
+$btn-border-radius-sm: $border-radius-pill;
+$btn-border-radius-lg: $border-radius-pill;
+$btn-font-weight: 600;
+$btn-padding-y: 0.55rem;
+$btn-padding-x: 1.25rem;
+
+// Cards
+$card-border-radius: 1.25rem;
+$card-border-width: 0;
+$card-spacer-y: 0.85rem;
+$card-spacer-x: 0.85rem;
+
+// Nav pills
+$nav-pills-border-radius: $border-radius-pill;
+$nav-link-font-weight: 700;
+$nav-pills-link-active-bg: $primary;
+$nav-pills-link-active-color: #fff;
+
+// Navbar
+$navbar-padding-y: 0.75rem;
+$navbar-nav-link-padding-x: 1rem;
+
+// List group
+$list-group-border-radius: 1rem;
+$list-group-border-width: 0;
+
+// Modal / offcanvas extras keep rounded feel
+$modal-content-border-radius: $border-radius-lg;
+
+$box-shadow: 0 4px 16px 0 rgba(#000, .15);
+$box-shadow-sm: 0 2px 8px 0 rgba(#000, .1);
