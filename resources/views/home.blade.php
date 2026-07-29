@@ -3,7 +3,7 @@
 @section('content')
 
     @if ($featuredGames->isNotEmpty())
-        <div class="featured-band rounded-4 p-3 p-md-4 mb-5">
+        <div class="mb-4">
             @include('partials.section-heading', ['icon' => '🔥', 'title' => 'Trò chơi nổi bật'])
 
             <div class="row g-4">
@@ -17,7 +17,7 @@
     @foreach ($genres as $genre)
         @continue ($genre->games->isEmpty())
 
-        <div class="mb-5">
+        <div class="mb-4">
             @include('partials.section-heading', [
                 'icon' => match ($genre->slug) {
                     'tro-choi-tri-nho' => '🧠',

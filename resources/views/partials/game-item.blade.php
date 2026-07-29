@@ -3,9 +3,6 @@
         <div class="thumbnail ratio ratio-4x3" aria-hidden="true">
             <img src="{{ asset('storage/' . $game->thumbnail) }}"
                  alt="{{ $game->name }}" class="w-100 h-100 object-fit-cover">
-            @if ($featured ?? false)
-                <span class="featured-ribbon badge position-absolute top-0 start-0 m-2">🔥 Nổi bật</span>
-            @endif
         </div>
         <div class="py-3">
             <h3 class="title h4 text-center mb-0">{{ $game->name }}</h3>
