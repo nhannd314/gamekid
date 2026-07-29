@@ -1,0 +1,7 @@
+{
+    "name": "Chạm Số Theo Thứ Tự",
+    "min_age": 5,
+    "difficulty": "medium",
+    "description": "Các số bị xáo trộn trong lưới, hãy bấm lần lượt từ số 1 trở đi.",
+    "ranking_order": "desc"
+}

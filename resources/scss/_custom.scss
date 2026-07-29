@@ -194,3 +194,83 @@ a .title:hover {
 .game-content {
     min-height: 420px;
 }
+
+.label-normal {
+    padding: 4px 10px 3px;
+}
+.label-sm {
+    padding: 2px 8px 1px;
+}
+
+.leaderboard-list {
+    .leaderboard-row {
+        border-radius: .5rem;
+        transition: background-color .2s;
+
+        &.rank-1 {
+            background: linear-gradient(135deg, rgba($kid-yellow, .7), rgba($kid-yellow, .15));
+        }
+        &.rank-2 {
+            background: linear-gradient(135deg, rgba(#c0c0c0, .35), rgba(#c0c0c0, .08));
+        }
+        &.rank-3 {
+            background: linear-gradient(135deg, rgba(#cd7f32, .3), rgba(#cd7f32, .08));
+        }
+
+        &.border-bottom {
+            border-bottom-color: rgba(#000, .06) !important;
+        }
+    }
+
+    .leaderboard-rank {
+        width: 32px;
+    }
+
+    .leaderboard-avatar {
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+        font-weight: 700;
+        font-size: .95rem;
+    }
+
+    .leaderboard-score {
+        color: $kid-purple-deep;
+    }
+}
+
+.section-title {
+    font-size: 1.5rem;
+}
+
+.section-title-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    background: $kid-light;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.section-link {
+    color: $kid-purple-deep;
+
+    &:hover {
+        color: $kid-purple;
+    }
+}
+
+.featured-band {
+    background: linear-gradient(135deg, rgba($kid-purple, .12), rgba($kid-yellow, .18));
+    border: 2px dashed rgba($kid-purple, .25);
+}
+
+.featured-ribbon {
+    background: linear-gradient(135deg, #ff9a56, #ff6f61);
+    color: #fff;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .25);
+}

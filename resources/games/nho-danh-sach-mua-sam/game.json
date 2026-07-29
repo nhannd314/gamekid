@@ -1,0 +1,7 @@
+{
+    "name": "Nhớ Danh Sách Mua Sắm",
+    "min_age": 5,
+    "difficulty": "medium",
+    "description": "Ghi nhớ danh sách mua sắm rồi chọn lại đúng các món đã xuất hiện.",
+    "ranking_order": "desc"
+}

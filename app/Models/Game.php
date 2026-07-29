@@ -22,6 +22,7 @@ class Game extends Model
     protected $fillable = [
         'name',
         'slug',
+        'folder',
         'description',
         'thumbnail',
         'config',
@@ -30,6 +31,8 @@ class Game extends Model
         'is_featured',
         'rating',
         'ranking_order',
+        'min_age',
+        'difficulty',
     ];
 
     protected $casts = [
@@ -59,5 +62,25 @@ class Game extends Model
         return $this->ranking_order === 'asc'
             ? $newScore < $currentScore
             : $newScore > $currentScore;
+    }
+
+    public function difficultyLabel(): string
+    {
+        return match ($this->difficulty) {
+            'easy' => 'Dễ',
+            'medium' => 'Trung bình',
+            'hard' => 'Khó',
+            default => $this->difficulty,
+        };
+    }
+
+    public function difficultyBadgeClass(): string
+    {
+        return match ($this->difficulty) {
+            'easy' => 'text-bg-success',
+            'medium' => 'text-bg-warning',
+            'hard' => 'text-bg-danger',
+            default => 'text-bg-secondary',
+        };
     }
 }

@@ -1,5 +1,8 @@
 @extends('layouts.app-sidebar')
 
+@section('title', $genre->name . ' — KiddoPlay')
+@section('meta_description', 'Khám phá danh sách ' . $genre->name . ' tại KiddoPlay. Các trò chơi giúp bé rèn luyện trí tuệ và tư duy.')
+
 @section('content')
 
     <h2 class="mb-4">

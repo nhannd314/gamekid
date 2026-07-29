@@ -1,0 +1,243 @@
+.colorpop-game {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    height: 500px;
+    margin: 0 auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom, #e0f7fa, #81d4fa);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    color: #333;
+    user-select: none;
+    touch-action: none;
+}
+
+.colorpop-game-stats {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.colorpop-game-stats .stat {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 1rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.colorpop-target-indicator {
+    position: absolute;
+    top: 42px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 7px 18px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    z-index: 10;
+    white-space: nowrap;
+    pointer-events: none;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.colorpop-target-indicator.pulse {
+    transform: translateX(-50%) scale(1.1);
+}
+
+.colorpop-target-indicator .target-name {
+    text-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+.colorpop-timer-wrap {
+    position: absolute;
+    top: 78px;
+    left: 15px;
+    right: 15px;
+    height: 7px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 999px;
+    overflow: hidden;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.colorpop-timer-bar {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to right, #4caf50, #8bc34a);
+    transition: width 0.1s linear, background-color 0.3s;
+}
+
+.colorpop-timer-bar.warning {
+    background: linear-gradient(to right, #ff9800, #ffc107);
+}
+
+.colorpop-timer-bar.danger {
+    background: linear-gradient(to right, #f44336, #ef5350);
+}
+
+.colorpop-game-canvas-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.balloon {
+    position: absolute;
+    width: 60px;
+    height: 75px;
+    border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+    cursor: pointer;
+    z-index: 5;
+    transition: transform 0.1s;
+}
+
+.balloon::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 8px solid currentColor;
+    color: inherit;
+    filter: brightness(0.9);
+}
+
+.balloon-string {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    width: 2px;
+    height: 40px;
+    background: rgba(0,0,0,0.15);
+    transform: translateX(-50%);
+}
+
+.balloon.popping {
+    transform: scale(1.5);
+    opacity: 0;
+    transition: all 0.2s ease-out;
+}
+
+.colorpop-game-start {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(8px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+    color: #01579b;
+    text-align: center;
+    padding: 20px;
+}
+
+.colorpop-game-start h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: #0277bd;
+}
+
+.colorpop-game-start-btn {
+    padding: 16px 45px;
+    font-size: 1.6rem;
+    background: #00c853;
+    color: white;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(0, 200, 83, 0.3);
+    font-weight: bold;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.colorpop-game-start-btn:hover {
+    background: #00b248;
+    transform: scale(1.05);
+}
+
+.colorpop-game-message {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 30;
+}
+
+.colorpop-game-message-card {
+    background: white;
+    padding: 40px;
+    border-radius: 30px;
+    text-align: center;
+    max-width: 85%;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+}
+
+.colorpop-game-message-emoji {
+    font-size: 4.5rem;
+    margin-bottom: 15px;
+    animation: bounce 2s infinite;
+}
+
+.colorpop-game-message-ok {
+    padding: 12px 35px;
+    background: #03a9f4;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: background 0.2s;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-20px);}
+    60% {transform: translateY(-10px);}
+}
+
+.shake {
+    animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes shake {
+    10%, 90% { transform: translate3d(-1px, 0, 0); }
+    20%, 80% { transform: translate3d(2px, 0, 0); }
+    30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+    40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+
+.score-pop {
+    position: absolute;
+    color: #00c853;
+    font-weight: bold;
+    font-size: 1.8rem;
+    pointer-events: none;
+    animation: float-up-pop 0.8s ease-out forwards;
+    z-index: 15;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+@keyframes float-up-pop {
+    0% { transform: scale(0.5) translateY(0); opacity: 0; }
+    20% { transform: scale(1.2) translateY(-20px); opacity: 1; }
+    100% { transform: scale(1) translateY(-60px); opacity: 0; }
+}

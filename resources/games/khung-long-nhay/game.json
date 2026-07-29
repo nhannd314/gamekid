@@ -1,0 +1,7 @@
+{
+    "name": "Khủng Long Nhảy",
+    "min_age": 4,
+    "difficulty": "medium",
+    "description": "Bấm nút Nhảy để giúp chú khủng long vượt qua các chướng ngại vật trên đường chạy.",
+    "ranking_order": "desc"
+}

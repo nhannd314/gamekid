@@ -1,0 +1,240 @@
+.emotion-match-game {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    user-select: none;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+.emotion-match-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    z-index: 10;
+}
+
+.emotion-match-stats .stat {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #4a5568;
+}
+
+.emotion-match-stats span {
+    color: #3182ce;
+}
+
+.emotion-match-restart {
+    padding: 8px 16px;
+    background-color: #f56565;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.emotion-match-restart:hover {
+    background-color: #e53e3e;
+}
+
+.emotion-match-board-wrap {
+    position: relative;
+    flex: 1;
+    background: #edf2f7;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.emotion-match-status {
+    text-align: center;
+    padding: 10px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #2d3748;
+    margin-bottom: 20px;
+}
+
+.emotion-sequence-display {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    min-height: 80px;
+}
+
+.emotion-tile {
+    width: 70px;
+    height: 70px;
+    background: white;
+    border: 3px solid #3182ce;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.emotion-tile.hidden-emotion {
+    font-size: 0;
+    background: #cbd5e0;
+}
+
+.emotion-tile.correct {
+    border-color: #48bb78;
+    background: #f0fff4;
+}
+
+.emotion-tile.wrong {
+    border-color: #f56565;
+    background: #fff5f5;
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.emotion-selection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 15px;
+    justify-items: center;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.emotion-option {
+    width: 80px;
+    height: 80px;
+    font-size: 45px;
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s;
+}
+
+.emotion-option:hover {
+    transform: translateY(-5px);
+    border-color: #3182ce;
+    background: white;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.emotion-option:active {
+    transform: scale(0.95);
+}
+
+.emotion-match-start {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+}
+
+.emotion-match-start-btn {
+    padding: 15px 40px;
+    font-size: 1.5rem;
+    background: #3182ce;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(49, 130, 206, 0.39);
+    transition: transform 0.2s, background 0.2s;
+}
+
+.emotion-match-start-btn:hover {
+    transform: scale(1.05);
+    background: #2b6cb0;
+}
+
+.emotion-match-message {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 30;
+}
+
+.emotion-match-message-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 80%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.emotion-match-message-emoji {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.emotion-match-message-text {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.emotion-match-message-ok {
+    padding: 10px 30px;
+    background: #3182ce;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.is-hidden {
+    display: none !important;
+}
+
+@media (max-width: 600px) {
+    .emotion-match-game {
+        height: 550px;
+    }
+    .emotion-tile {
+        width: 55px;
+        height: 55px;
+        font-size: 30px;
+    }
+    .emotion-option {
+        width: 60px;
+        height: 60px;
+        font-size: 35px;
+    }
+}

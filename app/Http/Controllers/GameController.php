@@ -10,7 +10,11 @@ class GameController extends Controller
     {
         $game->load('categories');
 
-        $topScores = $game->scores()->with('user')->orderByDesc('best_score')->limit(10)->get();
+        $topScores = $game->scores()
+            ->with('user')
+            ->orderBy('best_score', $game->ranking_order === 'asc' ? 'asc' : 'desc')
+            ->limit(10)
+            ->get();
 
         return view('game', compact('game', 'topScores'));
     }

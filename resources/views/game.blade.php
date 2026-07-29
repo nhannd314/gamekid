@@ -1,5 +1,9 @@
 @extends('layouts.app-sidebar')
 
+@section('title', $game->name . ' — KiddoPlay')
+@section('meta_description', $game->description)
+@section('meta_image', asset('storage/' . $game->thumbnail))
+
 @section('content')
 
     <div class="ps-md-2">
@@ -20,7 +24,13 @@
                 <div class="d-flex justify-content-between align-items-start mb-2">
                     <div>
                         <h1 class="h2">{{ $game->name }}</h1>
-                        <div class="mb-3 fs-6">{{ $game->description }}</div>
+                        <div class="mb-3 d-flex gap-2 flex-wrap">
+                            @if ($game->min_age)
+                                <span class="text-bg-light border rounded py-1 px-2">👶 {{ $game->min_age }}+ tuổi</span>
+                            @endif
+                            <span class="rounded text-white py-1 px-2 {{ $game->difficultyBadgeClass() }}">🎯 Độ khó: {{ $game->difficultyLabel() }}</span>
+                        </div>
+                        <div class="mb-2 fs-6">{{ $game->description }}</div>
                     </div>
                     <button id="bg-music-toggle" type="button" class="bg-music-toggle btn btn-primary btn-sm px-3 py-2 text-nowrap" aria-pressed="true" aria-label="Tắt nhạc nền">
                         🔊 Tắt nhạc
@@ -35,7 +45,7 @@
 
                 <audio id="bg-music" src="{{ asset('audio/bg.mp3') }}" loop preload="auto"></audio>
 
-                @vite('resources/games/' . $game->slug . '/index.js')
+                @vite('resources/games/' . $game->folder . '/index.js')
             </div>
             <!--/ relative games -->
             <div class="col-12 col-md-4">

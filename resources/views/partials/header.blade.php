@@ -4,7 +4,28 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>KiddoPlay — Học mà chơi, chơi mà nhớ!</title>
+    <title>@yield('title', 'KiddoPlay — Học mà chơi, chơi mà nhớ!')</title>
+    <meta name="description" content="@yield('meta_description', 'KiddoPlay - Nền tảng trò chơi giáo dục trí tuệ dành cho trẻ em. Giúp bé rèn luyện trí nhớ, tư duy và khả năng quan sát một cách vui nhộn.')">
+    <meta name="keywords" content="@yield('meta_keywords', 'trò chơi trẻ em, game giáo dục, rèn luyện trí nhớ, phát triển tư duy, kidplay, game cho bé')">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/favicon-16.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/favicon-32.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/apple-touch-icon.png') }}">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:title" content="@yield('title', 'KiddoPlay — Học mà chơi, chơi mà nhớ!')">
+    <meta property="og:description" content="@yield('meta_description', 'KiddoPlay - Nền tảng trò chơi giáo dục trí tuệ dành cho trẻ em. Giúp bé rèn luyện trí nhớ, tư duy và khả năng quan sát một cách vui nhộn.')">
+    <meta property="og:image" content="@yield('meta_image', asset('images/logo.png'))">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{ url()->current() }}">
+    <meta property="twitter:title" content="@yield('title', 'KiddoPlay — Học mà chơi, chơi mà nhớ!')">
+    <meta property="twitter:description" content="@yield('meta_description', 'KiddoPlay - Nền tảng trò chơi giáo dục trí tuệ dành cho trẻ em. Giúp bé rèn luyện trí nhớ, tư duy và khả năng quan sát một cách vui nhộn.')">
+    <meta property="twitter:image" content="@yield('meta_image', asset('images/logo.png'))">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

@@ -1,0 +1,7 @@
+{
+    "name": "Chạm Đúng Màu",
+    "min_age": 4,
+    "difficulty": "medium",
+    "description": "Nhiều vòng tròn màu xuất hiện, chạm đúng màu được yêu cầu trước khi hết giờ.",
+    "ranking_order": "desc"
+}

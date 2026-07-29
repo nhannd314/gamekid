@@ -1,0 +1,7 @@
+{
+    "name": "Tap The Color",
+    "min_age": 4,
+    "difficulty": "medium",
+    "description": "Colorful circles appear on screen — tap the matching color before time runs out!",
+    "ranking_order": "desc"
+}

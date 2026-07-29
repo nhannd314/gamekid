@@ -1,0 +1,240 @@
+.trackpet-game {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+.trackpet-game-stats {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.trackpet-game-stats .stat {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #4a3f6b;
+}
+
+.trackpet-game-stats .stat span {
+    color: #ff6f61;
+}
+
+.trackpet-game-restart {
+    border: none;
+    border-radius: 999px;
+    padding: 8px 20px;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(135deg, #ff9a56, #ff6f61);
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.trackpet-game-restart:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(255, 111, 97, 0.35);
+}
+
+.trackpet-game-board-wrap {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px;
+    border-radius: 28px;
+    background: #1a3a2e;
+    min-height: 460px;
+    overflow: hidden;
+}
+
+.trackpet-game-timer-wrap {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, .1);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.trackpet-game-timer-bar {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to right, #4caf50, #8bc34a);
+    transition: width 0.1s linear, background-color 0.3s;
+}
+
+.trackpet-game-timer-bar.warning {
+    background: linear-gradient(to right, #ff9800, #ffc107);
+}
+
+.trackpet-game-timer-bar.danger {
+    background: linear-gradient(to right, #f44336, #ef5350);
+}
+
+.trackpet-game-status {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fce998;
+}
+
+.trackpet-stage {
+    position: relative;
+    height: 340px;
+    border-radius: 20px;
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(255, 255, 255, .03),
+        rgba(255, 255, 255, .03) 12px,
+        transparent 12px,
+        transparent 24px
+    );
+    overflow: hidden;
+}
+
+.trackpet-pet {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .06);
+    cursor: pointer;
+    transition: left .55s ease, top .55s ease, box-shadow .15s ease, background-color .15s ease, transform .15s ease;
+}
+
+.trackpet-pet:hover {
+    background: rgba(255, 255, 255, .14);
+}
+
+.trackpet-pet.highlighted {
+    background: rgba(252, 233, 152, .35);
+    box-shadow: 0 0 0 4px #fce998, 0 0 28px 8px rgba(252, 233, 152, .8);
+    transform: translate(-50%, -50%) scale(1.15);
+}
+
+.trackpet-pet.correct {
+    background: rgba(46, 204, 113, .35) !important;
+    box-shadow: 0 0 0 4px #fff, 0 0 24px 6px rgba(46, 204, 113, .9) !important;
+}
+
+.trackpet-pet.wrong {
+    background: rgba(255, 77, 77, .35) !important;
+    box-shadow: 0 0 0 4px #fff, 0 0 24px 6px rgba(255, 77, 77, .9) !important;
+}
+
+.trackpet-start {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 28px;
+    background: rgba(26, 58, 46, .92);
+}
+
+.trackpet-start-btn {
+    border: none;
+    padding: 14px 32px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1a3a2e;
+    background-color: #fce998;
+    border-radius: 999px;
+    box-shadow: 0 .4rem 1rem rgba(0, 0, 0, .25);
+    cursor: pointer;
+    transition: transform .2s;
+}
+
+.trackpet-start-btn:hover {
+    transform: scale(1.06);
+}
+
+.trackpet-game-message {
+    position: absolute;
+    inset: 0;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(26, 58, 46, .88);
+    border-radius: 28px;
+    animation: trackpet-message-fade .25s ease;
+}
+
+.trackpet-message-card {
+    max-width: 320px;
+    padding: 32px 40px;
+    border-radius: 20px;
+    background: #fff5f0;
+    border: 2px dashed #ff6f61;
+    text-align: center;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .25);
+    animation: trackpet-message-pop .3s ease;
+}
+
+.trackpet-message-emoji {
+    font-size: 3rem;
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.trackpet-message-text {
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #b8461e;
+}
+
+.trackpet-message-ok {
+    border: none;
+    border-radius: 999px;
+    padding: 10px 28px;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(135deg, #ff9a56, #ff6f61);
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.trackpet-message-ok:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(255, 111, 97, 0.35);
+}
+
+@keyframes trackpet-message-fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes trackpet-message-pop {
+    from { transform: scale(.85); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@media (max-width: 480px) {
+    .trackpet-game-board-wrap {
+        padding: 12px;
+        min-height: 400px;
+    }
+
+    .trackpet-stage {
+        height: 280px;
+    }
+
+    .trackpet-pet {
+        width: 38px;
+        height: 38px;
+        font-size: 1.6rem;
+    }
+}

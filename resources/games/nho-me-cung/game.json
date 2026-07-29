@@ -1,0 +1,7 @@
+{
+    "name": "Nhớ Mê Cung",
+    "min_age": 5,
+    "difficulty": "medium",
+    "description": "Ghi nhớ đường đi của chú chuột qua mê cung rồi bấm lại đúng đường.",
+    "ranking_order": "desc"
+}

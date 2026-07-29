@@ -1,0 +1,7 @@
+{
+    "name": "Lật Thẻ Nhớ Cặp",
+    "min_age": 4,
+    "difficulty": "medium",
+    "description": "Lật hai thẻ bài liên tiếp để tìm ra các cặp hình giống nhau, càng ít lượt lật càng giỏi.",
+    "ranking_order": "asc"
+}

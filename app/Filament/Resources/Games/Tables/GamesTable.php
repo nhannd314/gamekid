@@ -19,6 +19,8 @@ class GamesTable
                     ->searchable(),
                 TextColumn::make('slug')
                     ->searchable(),
+                TextColumn::make('folder')
+                    ->searchable(),
                 TextColumn::make('description')
                     ->searchable(),
                 TextColumn::make('thumbnail')
@@ -34,6 +36,20 @@ class GamesTable
                     ->searchable(),
                 TextColumn::make('rating')
                     ->numeric()
+                    ->sortable(),
+                TextColumn::make('min_age')
+                    ->label('Độ tuổi')
+                    ->formatStateUsing(fn (?int $state): string => $state !== null ? "{$state}+" : '-')
+                    ->numeric()
+                    ->sortable(),
+                TextColumn::make('difficulty')
+                    ->label('Độ khó')
+                    ->formatStateUsing(fn (string $state): string => match ($state) {
+                        'easy' => 'Dễ',
+                        'medium' => 'Trung bình',
+                        'hard' => 'Khó',
+                        default => $state,
+                    })
                     ->sortable(),
                 TextColumn::make('created_at')
                     ->dateTime()

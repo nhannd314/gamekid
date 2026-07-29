@@ -19,6 +19,7 @@ class GameFactory extends Factory
     {
         return [
             'name' => fake()->unique()->words(3, true),
+            'folder' => fake()->unique()->slug(),
             'description' => fake()->sentence(),
             'thumbnail' => 'games/placeholder.jpg',
             'is_active' => true,

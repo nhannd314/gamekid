@@ -1,0 +1,7 @@
+{
+    "name": "Ghép Bóng",
+    "min_age": 4,
+    "difficulty": "easy",
+    "description": "Tìm chiếc bóng (shadow) tương ứng với hình ảnh con vật xuất hiện.",
+    "ranking_order": "desc"
+}

@@ -21,6 +21,10 @@ class GameForm
                 TextInput::make('slug')
                     ->disabled()
                     ->dehydrated(false),
+                TextInput::make('folder')
+                    ->label('Thư mục game')
+                    ->helperText('Tên thư mục thực tế trong resources/games/, vd: ai-bien-mat')
+                    ->required(),
                 Select::make('categories')
                     ->relationship('categories', 'name')
                     ->multiple()
@@ -56,6 +60,23 @@ class GameForm
                     ->inline()->columnSpanFull()
                     ->required()
                     ->default('desc'),
+                TextInput::make('min_age')
+                    ->label('Độ tuổi từ')
+                    ->numeric()
+                    ->minValue(0)
+                    ->maxValue(255)
+                    ->suffix('tuổi')
+                    ->placeholder('Vd: 5'),
+                Radio::make('difficulty')
+                    ->options([
+                        'easy' => 'Dễ',
+                        'medium' => 'Trung bình',
+                        'hard' => 'Khó',
+                    ])
+                    ->label('Độ khó')
+                    ->inline()->columnSpanFull()
+                    ->required()
+                    ->default('easy'),
 
             ]);
     }

@@ -1,0 +1,7 @@
+{
+    "name": "Ai Biến Mất?",
+    "min_age": 3,
+    "difficulty": "easy",
+    "description": "Ghi nhớ các con vật rồi đoán xem con nào đã biến mất.",
+    "ranking_order": "desc"
+}

@@ -1,0 +1,7 @@
+{
+    "name": "Tìm Hình Khác Biệt",
+    "min_age": 5,
+    "difficulty": "hard",
+    "description": "Tìm ra hình ảnh khác biệt nhất trong nhóm hình ảnh giống nhau trước khi hết giờ.",
+    "ranking_order": "desc"
+}

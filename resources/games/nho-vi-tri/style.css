@@ -70,6 +70,7 @@
 .posmem-tile.active {
     opacity: 1;
     transform: scale(.94);
+    background: #fce998;
 }
 
 .posmem-tile.show-light {

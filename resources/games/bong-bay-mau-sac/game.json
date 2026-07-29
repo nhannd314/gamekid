@@ -1,0 +1,7 @@
+{
+    "name": "Bóng Bay Màu Sắc",
+    "min_age": 4,
+    "difficulty": "medium",
+    "description": "Bấm vào những quả bóng có màu sắc được yêu cầu để ghi điểm trước khi hết giờ.",
+    "ranking_order": "desc"
+}

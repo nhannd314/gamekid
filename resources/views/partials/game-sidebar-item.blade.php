@@ -2,7 +2,7 @@
     <div class="flex-shrink-0" style="width: 120px; height: 90px;">
         <img src="{{ asset('storage/' . $game->thumbnail) }}"
              alt="{{ $game->name }}"
-             class="w-100 h-100 object-fit-cover rounded-1">
+             class="w-100 h-100 object-fit-cover" style="border-radius: .5rem">
     </div>
     <div class="flex-grow-1 ms-3 overflow-hidden">
         <h4 class="h5 mb-1 text-truncate fw-bold">{{ $game->name }}</h4>

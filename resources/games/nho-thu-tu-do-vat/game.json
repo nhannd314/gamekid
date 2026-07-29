@@ -1,0 +1,7 @@
+{
+    "name": "Nhớ Thứ Tự Đồ Vật",
+    "min_age": 4,
+    "difficulty": "easy",
+    "description": "Ghi nhớ và lặp lại đúng thứ tự chuỗi đồ vật ngày càng dài.",
+    "ranking_order": "desc"
+}

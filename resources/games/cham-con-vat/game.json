@@ -1,0 +1,7 @@
+{
+    "name": "Chạm Con Vật",
+    "min_age": 5,
+    "difficulty": "medium",
+    "description": "Xem tên con vật bằng tiếng Anh và chạm đúng hình minh họa để ghi điểm.",
+    "ranking_order": "desc"
+}

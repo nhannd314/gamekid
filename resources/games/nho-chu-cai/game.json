@@ -1,0 +1,7 @@
+{
+    "name": "Nhớ Chữ Cái",
+    "min_age": 5,
+    "difficulty": "medium",
+    "description": "Ghi nhớ và lặp lại đúng thứ tự dãy chữ cái ngày càng dài.",
+    "ranking_order": "desc"
+}

@@ -1,0 +1,7 @@
+{
+    "name": "Nhớ Số Theo Thứ Tự",
+    "min_age": 5,
+    "difficulty": "medium",
+    "description": "Ghi nhớ vị trí các số rồi bấm lại theo đúng thứ tự tăng dần sau khi số đã ẩn đi.",
+    "ranking_order": "desc"
+}

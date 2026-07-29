@@ -1,0 +1,7 @@
+{
+    "name": "Nhớ Ngược",
+    "min_age": 6,
+    "difficulty": "hard",
+    "description": "Ghi nhớ dãy số rồi nhập lại theo đúng thứ tự NGƯỢC, thử thách trí nhớ nâng cao.",
+    "ranking_order": "desc"
+}

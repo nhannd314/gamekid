@@ -1,0 +1,7 @@
+{
+    "name": "Nhớ Vị Trí",
+    "min_age": 4,
+    "difficulty": "easy",
+    "description": "Ghi nhớ vị trí các ô đã sáng lên rồi bấm lại đúng vị trí đó.",
+    "ranking_order": "desc"
+}
