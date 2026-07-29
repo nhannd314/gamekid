@@ -6,6 +6,7 @@ use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Tables\Columns\IconColumn;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
@@ -21,36 +22,9 @@ class GamesTable
                     ->searchable(),
                 TextColumn::make('folder')
                     ->searchable(),
-                TextColumn::make('description')
+                ImageColumn::make('thumbnail')
+                    ->disk('public')
                     ->searchable(),
-                TextColumn::make('thumbnail')
-                    ->searchable(),
-                IconColumn::make('is_active')
-                    ->boolean(),
-                TextColumn::make('sort_order')
-                    ->numeric()
-                    ->sortable(),
-                IconColumn::make('is_featured')
-                    ->boolean(),
-                TextColumn::make('ranking_order')
-                    ->searchable(),
-                TextColumn::make('rating')
-                    ->numeric()
-                    ->sortable(),
-                TextColumn::make('min_age')
-                    ->label('Độ tuổi')
-                    ->formatStateUsing(fn (?int $state): string => $state !== null ? "{$state}+" : '-')
-                    ->numeric()
-                    ->sortable(),
-                TextColumn::make('difficulty')
-                    ->label('Độ khó')
-                    ->formatStateUsing(fn (string $state): string => match ($state) {
-                        'easy' => 'Dễ',
-                        'medium' => 'Trung bình',
-                        'hard' => 'Khó',
-                        default => $state,
-                    })
-                    ->sortable(),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
