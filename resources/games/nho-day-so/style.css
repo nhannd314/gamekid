@@ -210,3 +210,39 @@
     from { transform: scale(.85); opacity: 0; }
     to { transform: scale(1); opacity: 1; }
 }
+
+@media (max-width: 480px) {
+    .numseq-game-board-wrap {
+        gap: 12px;
+        padding: 14px;
+        border-radius: 28px;
+    }
+
+    .numseq-display {
+        height: 80px;
+        border-radius: 20px;
+    }
+
+    .numseq-display span {
+        font-size: 2.5rem;
+    }
+
+    .numseq-progress {
+        gap: 8px;
+    }
+
+    .numseq-progress-dot {
+        width: 12px;
+        height: 12px;
+    }
+
+    .numseq-keypad {
+        gap: 8px;
+    }
+
+    .numseq-key {
+        min-width: 0;
+        border-radius: 14px;
+        font-size: 1.375rem;
+    }
+}

@@ -101,18 +101,18 @@
 }
 
 .shadow-options {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(84px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: start;
     gap: 12px;
     padding: 4px;
     flex: 1;
-    align-content: start;
 }
 
 .shadow-option {
     aspect-ratio: 1;
-    width: 100%;
-    min-width: 0;
+    flex: 0 0 84px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -122,36 +122,49 @@
     border-radius: 18px;
     cursor: pointer;
     box-shadow: inset 0 -4px 0 rgba(0, 0, 0, .06), 0 3px 6px rgba(0, 0, 0, .12);
-    transition: transform .1s ease, box-shadow .1s ease, opacity .1s ease;
-
-    /* Hiệu ứng bóng: hiện hình dưới dạng bóng đen (silhouette) */
-    filter: brightness(0);
-    opacity: 0.75;
+    transition: transform .1s ease, box-shadow .1s ease;
 }
 
 .shadow-option:hover {
     transform: scale(1.08);
-    opacity: 0.9;
 }
 
 .shadow-option:active {
     transform: scale(.94);
 }
 
+.shadow-option-emoji {
+    /* Hiệu ứng bóng: hiện hình dưới dạng bóng đen (silhouette). Chỉ áp dụng
+       filter lên emoji, không lên cả nút, để nền trắng không bị tối theo. */
+    filter: brightness(0);
+    opacity: 0.75;
+    transition: opacity .1s ease;
+}
+
+.shadow-option:hover .shadow-option-emoji {
+    opacity: 0.9;
+}
+
 .shadow-option.correct {
-    filter: none;
-    opacity: 1;
     background: #c8e6c9;
     border-color: #4caf50;
     box-shadow: 0 0 0 4px #fff, 0 0 24px 6px rgba(46, 204, 113, .9);
 }
 
-.shadow-option.wrong {
+.shadow-option.correct .shadow-option-emoji {
     filter: none;
     opacity: 1;
+}
+
+.shadow-option.wrong {
     background: #ffcdd2;
     border-color: #f44336;
     box-shadow: 0 0 0 4px #fff, 0 0 24px 6px rgba(255, 77, 77, .9);
+}
+
+.shadow-option.wrong .shadow-option-emoji {
+    filter: none;
+    opacity: 1;
 }
 
 .shadow-game-start {
@@ -260,11 +273,11 @@
     }
 
     .shadow-options {
-        grid-template-columns: repeat(auto-fill, minmax(64px, 1fr));
         gap: 8px;
     }
 
     .shadow-option {
+        flex-basis: 64px;
         font-size: 2rem;
     }
 

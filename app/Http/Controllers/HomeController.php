@@ -19,17 +19,10 @@ class HomeController extends Controller
         $genres = Genre::query()
             ->orderBy('sort_order')
             ->with(['games' => function ($query) {
-                $query->with('categories')->where('is_active', true)->orderBy('sort_order');
+                $query->with('categories')->where('is_active', true)->limit(8)->orderBy('sort_order');
             }])
             ->get();
 
-        $otherGames = Game::query()
-            ->with('categories')
-            ->where('is_active', true)
-            ->whereDoesntHave('genres')
-            ->orderBy('sort_order')
-            ->get();
-
-        return view('home', compact('featuredGames', 'genres', 'otherGames'));
+        return view('home', compact('featuredGames', 'genres'));
     }
 }

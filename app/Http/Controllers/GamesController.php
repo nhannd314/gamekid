@@ -2,21 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Genre;
+use App\Models\Game;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
-class GenreController extends Controller
+class GamesController extends Controller
 {
-    public function show(Genre $genre, Request $request): View|string
+    public function index(Request $request): View|string
     {
-        $games = $genre->games()
+        $games = Game::query()
             ->with('categories')
             ->where('is_active', true)
             ->orderBy('sort_order')
             ->paginate(20);
 
-        return view('genre', compact('genre', 'games'))
+        return view('games', compact('games'))
             ->fragmentIf($request->ajax(), 'games-grid');
     }
 }

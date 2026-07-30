@@ -35,7 +35,7 @@
 
 </head>
 <body class="page-home">
-<header class="header bg-white shadow position-relative z-index-10">
+<header class="header bg-white shadow">
     <div class="container-fluid">
         <div class="navbar navbar-expand-lg p-0">
 
@@ -54,12 +54,7 @@
                     </a>
                     @foreach ($genres as $genre)
                         <a class="link @if ($activeGenre?->is($genre)) active @endif" href="{{ route('game.genre', $genre->slug) }}">
-                            <span class="icon">{{ match ($genre->slug) {
-                                'tro-choi-tri-nho' => '🧠',
-                                'tro-choi-tri-tue' => '🧩',
-                                'tro-choi-hoc-tieng-anh' => '🔤',
-                                default => '🎮',
-                            } }}</span> {{ $genre->name }}
+                            <span class="icon">{{ $genre->icon }}</span> {{ $genre->name }}
                         </a>
                     @endforeach
                 </nav>
@@ -78,7 +73,7 @@
                                     </span>
                                 @endif
                             </button>
-                            <ul class="dropdown-menu dropdown-menu-end">
+                            <ul class="dropdown-menu dropdown-menu-lg-end">
                                 <li>
                                     <a class="dropdown-item" href="{{ route('profile.edit') }}">Hồ sơ</a>
                                 </li>

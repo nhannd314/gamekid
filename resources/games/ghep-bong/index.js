@@ -35,7 +35,7 @@ const ANIMALS = [
 ];
 
 const STARTING_COUNT = 2;
-const MAX_COUNT = 8;
+const MAX_COUNT = 14;
 const TIME_LIMIT_MS = 7000;
 const CORRECT_PAUSE_MS = 800;
 
@@ -186,7 +186,7 @@ function initShadowGame(container) {
             shadow.className = 'shadow-option';
             shadow.dataset.key = animal.key;
             shadow.setAttribute('aria-label', 'Chiếc bóng con vật');
-            shadow.textContent = animal.emoji;
+            shadow.innerHTML = `<span class="shadow-option-emoji">${animal.emoji}</span>`;
             shadow.addEventListener('click', () => handleChoice(animal.key, shadow));
             options.appendChild(shadow);
         });

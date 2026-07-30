@@ -5,18 +5,11 @@
 
 @section('content')
 
-    <h2 class="mb-4">
+    <h1 class="h2 mb-3">
         {{ $genre->name }}
-    </h2>
-    <div class="row g-4">
+    </h1>
 
-        @forelse ($games as $game)
-            @include('partials.game-item')
-        @empty
-
-        @endforelse
-
-    </div>
+    @include('partials.game-grid')
 
     @include('partials.benefits')
 

@@ -18,6 +18,7 @@ body, html {
     background-color: $kid-light;
 }
 .fs-sm { font-size: .9375rem;}
+.text-yellow { color: rgba(255, 166, 0, 0.9) !important; }
 
 .hover-bounce {
     transition: all .3s;
@@ -45,15 +46,19 @@ a .title:hover {
         padding: 6px 16px 4px 13px;
         @extend .rounded-3;
         transition: all .3s;
+        display: flex;
+        align-items: center;
+        gap: 3px;
         .icon {
             font-size: 1.5em;
-            margin-right: 3px;
         }
     }
 }
 
 .header {
     padding: 12px 0;
+    position: relative;
+    z-index: $zindex-sticky;
 
     .logo {
         max-width: 150px;
@@ -84,9 +89,6 @@ a .title:hover {
         .link {
             @extend .shadow-sm;
             color: $body-color;
-            display: flex;
-            align-items: center;
-            gap: 3px;
             &:hover, &.active {
                 color: #fff;
                 background-color: $kid-purple;
@@ -128,12 +130,14 @@ a .title:hover {
 
         .link {
             color: #fff;
-            padding: 6px 12px 6px 15px;
+            padding: 6px 12px 4px 15px;
             font-size: 1.1rem;
-            &:first-letter {
-                font-size: 1.4em;
-                margin-right: 2px;
+            background: lighten($kid-purple-deep, 1.5%);
+            border: solid 1px lighten($kid-purple-deep, 2%);
+            .icon {
+                width: 1.5em;
             }
+            margin-bottom: 7px;
             &:hover, &.active {
                 background: $kid-purple;
             }
@@ -166,7 +170,7 @@ a .title:hover {
 
     .hero-title {
         font-weight: 900;
-        font-size: 2.5rem;
+        font-size: 2rem;
         line-height: 1.2;
 
         @include media-breakpoint-up(md) {
@@ -193,6 +197,11 @@ a .title:hover {
 
 .game-content {
     min-height: 420px;
+}
+.game-card {
+    .thumbnail {
+        aspect-ratio: 3/2;
+    }
 }
 
 .label-normal {
@@ -236,29 +245,5 @@ a .title:hover {
 
     .leaderboard-score {
         color: $kid-purple-deep;
-    }
-}
-
-.section-title {
-    font-size: 1.5rem;
-}
-
-.section-title-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 2.25rem;
-    height: 2.25rem;
-    border-radius: 50%;
-    background: $kid-light;
-    font-size: 1.2rem;
-    flex-shrink: 0;
-}
-
-.section-link {
-    color: $kid-purple-deep;
-
-    &:hover {
-        color: $kid-purple;
     }
 }

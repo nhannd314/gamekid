@@ -4,6 +4,7 @@
     "type": "module",
     "scripts": {
         "build": "vite build",
+        "build:app": "vite build --mode app",
         "build:game": "vite build --mode",
         "dev": "vite"
     },

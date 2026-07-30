@@ -6,6 +6,7 @@ import path from 'node:path';
 
 const manifestPath = path.resolve('public/build/manifest.json');
 const DEFAULT_MODES = ['development', 'production'];
+const APP_MODE = 'app';
 
 /**
  * When building a single game, keep previous build output intact and merge
@@ -36,9 +37,11 @@ function partialBuildManifestMergePlugin(isPartialBuild) {
 }
 
 export default defineConfig(({ command, mode }) => {
+    // `vite build --mode app` builds only app.scss + app.js.
+    const isAppOnlyBuild = command === 'build' && mode === APP_MODE;
     // `vite build --mode <game-slug>` builds only that game under resources/games/.
-    const gameSlug = command === 'build' && !DEFAULT_MODES.includes(mode) ? mode : null;
-    const isPartialBuild = Boolean(gameSlug);
+    const gameSlug = command === 'build' && !isAppOnlyBuild && !DEFAULT_MODES.includes(mode) ? mode : null;
+    const isPartialBuild = isAppOnlyBuild || Boolean(gameSlug);
 
     let gameEntries = globSync('resources/games/*/index.js');
 
@@ -50,12 +53,18 @@ export default defineConfig(({ command, mode }) => {
         gameEntries = [targetEntry];
     }
 
+    let input = ['resources/scss/app.scss', 'resources/js/app.js', ...gameEntries];
+
+    if (isAppOnlyBuild) {
+        input = ['resources/scss/app.scss', 'resources/js/app.js'];
+    } else if (gameSlug) {
+        input = gameEntries;
+    }
+
     return {
         plugins: [
             laravel({
-                input: isPartialBuild
-                    ? gameEntries
-                    : ['resources/scss/app.scss', 'resources/js/app.js', ...gameEntries],
+                input,
                 refresh: true,
             }),
             partialBuildManifestMergePlugin(isPartialBuild),

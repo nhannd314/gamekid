@@ -16,6 +16,10 @@ class GenreForm
                 TextInput::make('slug')
                     ->disabled()
                     ->dehydrated(false),
+                TextInput::make('icon')
+                    ->label('Icon')
+                    ->helperText('Emoji hiển thị cho thể loại, vd: 🧠')
+                    ->maxLength(255),
                 TextInput::make('sort_order')
                     ->required()
                     ->numeric()

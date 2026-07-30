@@ -101,3 +101,67 @@ function updateMusicToggle(music, musicToggle) {
     musicToggle.textContent = music.muted ? '🔇 Bật nhạc' : '🔊 Tắt nhạc';
     musicToggle.setAttribute('aria-pressed', String(!music.muted));
 }
+
+// Infinite-scroll lazy loading for game grids (category, genre, /games pages).
+// Each container renders its own trigger element carrying the next page URL;
+// loading a page swaps in a freshly rendered trigger (or none, at the end).
+if (!window.__kiddoplayLazyGamesInitialized) {
+    window.__kiddoplayLazyGamesInitialized = true;
+
+    document.querySelectorAll('[data-lazy-games]').forEach(setUpLazyGames);
+}
+
+function setUpLazyGames(container) {
+    let observer = null;
+
+    function watchTrigger() {
+        const trigger = container.querySelector('[data-lazy-load-trigger]');
+
+        if (!trigger) {
+            return;
+        }
+
+        observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    loadNextPage(trigger);
+                }
+            });
+        });
+
+        observer.observe(trigger);
+    }
+
+    function loadNextPage(trigger) {
+        const nextPageUrl = trigger.dataset.nextPageUrl;
+
+        if (!nextPageUrl || trigger.dataset.loading === '1') {
+            return;
+        }
+
+        trigger.dataset.loading = '1';
+        observer?.disconnect();
+
+        fetch(nextPageUrl, { headers: { 'X-Requested-With': 'XMLHttpRequest' } })
+            .then((response) => response.text())
+            .then((html) => {
+                const template = document.createElement('template');
+                template.innerHTML = html.trim();
+
+                const grid = container.querySelector('#games-grid');
+                const newGrid = template.content.querySelector('#games-grid');
+
+                if (grid && newGrid) {
+                    grid.append(...newGrid.childNodes);
+                }
+
+                trigger.replaceWith(...template.content.querySelectorAll('[data-lazy-load-trigger]'));
+                watchTrigger();
+            })
+            .catch(() => {
+                trigger.dataset.loading = '';
+            });
+    }
+
+    watchTrigger();
+}
