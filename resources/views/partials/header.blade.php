@@ -58,10 +58,17 @@
                         </a>
                     @endforeach
                 </nav>
-                <div class="nav user flex-row align-items-center gap-2 pb-3 pb-lg-0 pe-lg-2">
-{{--                    <a href="" class="points-pill link" title="Điểm thưởng">--}}
-{{--                        <span class="icon" aria-hidden="true">⭐</span> 1250--}}
-{{--                    </a>--}}
+                <div class="nav user d-flex align-items-center gap-2 pb-3 pb-lg-0 pe-lg-2">
+                    <form action="{{ route('search') }}" method="GET" role="search" class="search-form me-2">
+                        <div class="position-relative">
+                            <input type="search" name="q" value="{{ $query ?? '' }}" class="search-input form-control rounded-pill"
+                                   placeholder="Tìm game..." aria-label="Tìm kiếm trò chơi">
+                            <button type="submit" class="search-btn position-absolute" aria-label="Tìm kiếm">
+                                <x-heroicon-o-magnifying-glass class="heroicon" style="width: 1em; height: 1em;" />
+                            </button>
+                        </div>
+                    </form>
+
                     @auth
                         <div class="dropdown">
                             <button type="button" class="avatar border-0 bg-transparent p-0" data-bs-toggle="dropdown" aria-expanded="false" title="Tài khoản" aria-label="Tài khoản">
@@ -86,10 +93,11 @@
                             </ul>
                         </div>
                     @else
-                        <a href="{{ route('login') }}" class="link bg-primary text-white">
-                            Đăng nhập
+                        <a href="{{ route('login') }}" class="border-bottom border-primary border-2 fw-semibold">
+                            Login
                         </a>
                     @endauth
+
                 </div>
             </div>
         </div>
