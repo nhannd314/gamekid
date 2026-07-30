@@ -24,11 +24,11 @@
             Liên hệ admin
         </h4>
         <a href="https://zalo.me/0965991099" target="_blank" rel="noopener"
-           class="d-flex mb-2 align-items-center gap-2 bg-kid-light p-2 rounded">
+           class="d-flex mb-2 align-items-center gap-2 bg-kid-purple text-white p-2 rounded">
             <span aria-hidden="true">💬</span> Zalo: 0965991099
         </a>
         <a href="https://facebook.com/nhannd314" target="_blank" rel="noopener"
-           class="d-flex align-items-center gap-2 bg-kid-light p-2 rounded">
+           class="d-flex align-items-center gap-2 bg-kid-purple text-white p-2 rounded">
             <span aria-hidden="true">📘</span> Facebook
         </a>
     </div>

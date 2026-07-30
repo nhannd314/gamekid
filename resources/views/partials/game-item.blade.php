@@ -17,7 +17,7 @@
             </div>
             <div class="text-center small">
                 <span class="stars text-warning" aria-label="{{ $game->rating }} sao">
-                    @for ($i=0;$i<$game->rating;$i++)<x-icons.star />@endfor
+                    @for ($i=0;$i<$game->rating;$i++)<x-heroicon-s-star class="star" />@endfor
                 </span>
             </div>
         </div>
