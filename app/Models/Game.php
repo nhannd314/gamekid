@@ -33,6 +33,7 @@ class Game extends Model
         'ranking_order',
         'min_age',
         'difficulty',
+        'plays_count',
     ];
 
     protected $casts = [
@@ -77,8 +78,8 @@ class Game extends Model
     public function difficultyBadgeClass(): string
     {
         return match ($this->difficulty) {
-            'easy' => 'text-bg-success',
-            'medium' => 'text-bg-warning',
+            'easy' => 'text-bg-primary',
+            'medium' => 'text-bg-success',
             'hard' => 'text-bg-danger',
             default => 'text-bg-secondary',
         };

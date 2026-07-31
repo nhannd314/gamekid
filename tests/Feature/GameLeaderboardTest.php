@@ -58,3 +58,12 @@ test('game page shows an empty state when there are no scores yet', function () 
     $response->assertOk();
     $response->assertSee('Chưa có điểm số nào cho game này.');
 });
+
+test('visiting the game page increments its play count', function () {
+    $game = Game::factory()->create(['plays_count' => 0]);
+
+    $this->get(route('game.show', $game->slug))->assertOk();
+    $this->get(route('game.show', $game->slug))->assertOk();
+
+    expect($game->fresh()->plays_count)->toBe(2);
+});

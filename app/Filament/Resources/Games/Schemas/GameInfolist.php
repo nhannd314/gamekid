@@ -21,6 +21,9 @@ class GameInfolist
                     ->boolean(),
                 TextEntry::make('sort_order')
                     ->numeric(),
+                TextEntry::make('plays_count')
+                    ->label('Lượt chơi')
+                    ->numeric(),
                 TextEntry::make('created_at')
                     ->dateTime()
                     ->placeholder('-'),

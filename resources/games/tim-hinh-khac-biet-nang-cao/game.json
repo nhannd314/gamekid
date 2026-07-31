@@ -1,0 +1,7 @@
+{
+    "name": "Tìm Hình Khác Biệt Nâng Cao",
+    "min_age": 6,
+    "difficulty": "hard",
+    "description": "Lưới 16x16 với số hình khác biệt tăng dần mỗi 4 vòng, tối đa 5 hình khác biệt cùng lúc. Thời gian cũng dài hơn khi có nhiều hình cần tìm.",
+    "ranking_order": "desc"
+}
