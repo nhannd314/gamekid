@@ -26,7 +26,7 @@
         </div>
 
         <div class="col-md-3">
-            <img src="{{ asset('images/khung-long.png') }}" alt="Benefits" class="w-100 hover-bounce">
+            <img loading="lazy" src="{{ asset('images/khung-long.png') }}" alt="Benefits" class="w-100 hover-bounce">
         </div>
     </div>
 </div>

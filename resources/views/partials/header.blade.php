@@ -36,14 +36,12 @@
 </head>
 <body class="page-home">
 <header class="header bg-white shadow">
-    <div class="container-fluid">
-        <div class="navbar navbar-expand-lg p-0">
-
+    <div class="navbar navbar-expand-lg p-0">
+        <div class="container-fluid">
             @include('partials.brand')
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false"
-                    aria-label="Mở/đóng menu">
+                    data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Mở/đóng menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -93,7 +91,7 @@
                             </ul>
                         </div>
                     @else
-                        <a href="{{ route('login') }}" class="border-bottom border-primary border-2 fw-semibold">
+                        <a href="{{ route('login') }}" class="ms-1 border-bottom border-primary border-2 fs-6 fw-semibold">
                             Login
                         </a>
                     @endauth
