@@ -1,0 +1,7 @@
+{
+    "name": "Đoán Quốc Gia Qua Lá Cờ",
+    "min_age": 6,
+    "difficulty": "medium",
+    "description": "Xem lá cờ, bấm gợi ý để xem tên quốc gia bằng tiếng Việt và chọn đúng tên tiếng Anh trong 4 đáp án. Học 72 quốc gia quen thuộc trên thế giới.",
+    "ranking_order": "desc"
+}

@@ -1,0 +1,7 @@
+{
+    "name": "Đoán Số Bằng Tiếng Anh",
+    "min_age": 6,
+    "difficulty": "medium",
+    "description": "Xem một con số từ 0 đến 100, nghe phát âm và chọn đúng cách đọc tiếng Anh trong 4 đáp án. Đặc biệt chú ý các cặp số dễ nhầm như thirteen/thirty, fourteen/forty...",
+    "ranking_order": "desc"
+}

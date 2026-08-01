@@ -14,8 +14,14 @@ class AuthenticatedSessionController extends Controller
     /**
      * Show the login form.
      */
-    public function create(): View
+    public function create(Request $request): View
     {
+        $redirect = $request->string('redirect')->toString();
+
+        if ($redirect !== '' && $this->isSafeRedirectUrl($redirect, $request)) {
+            $request->session()->put('url.intended', $redirect);
+        }
+
         return view('auth.login');
     }
 
@@ -42,5 +48,15 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerateToken();
 
         return redirect()->route('home');
+    }
+
+    /**
+     * Determine if the given redirect URL points back to this application.
+     */
+    private function isSafeRedirectUrl(string $url, Request $request): bool
+    {
+        $host = parse_url($url, PHP_URL_HOST);
+
+        return $host === null || $host === $request->getHost();
     }
 }

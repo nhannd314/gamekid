@@ -30,17 +30,23 @@
                             @endif
                             <span class="rounded text-white py-1 px-2 {{ $game->difficultyBadgeClass() }}">🎯 Độ khó: {{ $game->difficultyLabel() }}</span>
                         </div>
-                        <div class="mb-2 fs-6">{{ $game->description }}</div>
+                        <div class="fs-6">{{ $game->description }}</div>
                     </div>
                     <button id="bg-music-toggle" type="button" class="bg-music-toggle btn btn-primary btn-sm px-3 py-2 text-nowrap" aria-pressed="true" aria-label="Tắt nhạc nền">
                         🔊 Tắt nhạc
                     </button>
                 </div>
+                @guest
+                    <div class="fs-6 mb-4">
+                        ⏩ <a href="{{ route('login', ['redirect' => url()->full()]) }}" class="border-bottom border-2 text-danger">Đăng nhập</a> để ghi tên mình vào bảng xếp hạng
+                    </div>
+                @endguest
                 <div class="">
                     <button class="btn btn-secondary btn-lg" style="padding: 9px 16px 7px" id="play-game-btn">
                         PLAY GAME <x-heroicon-s-play class="heroicon" />
                     </button>
                 </div>
+
                 <div class="rounded-3 overflow-hidden bg-white p-3 p-md-4 shadow-sm d-none pb-md-5 position-relative" id="game-container" data-game-slug="{{ $game->slug }}"></div>
 
                 <audio id="bg-music" src="{{ asset('audio/bg.mp3') }}" loop preload="auto"></audio>

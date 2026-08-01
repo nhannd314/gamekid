@@ -54,6 +54,36 @@ test('authenticated users are redirected away from the login page', function () 
     $response->assertRedirect(route('home'));
 });
 
+test('users are redirected to the intended page after login', function () {
+    $user = User::factory()->create();
+
+    $intended = url('/game/doan-quoc-gia-qua-la-co');
+
+    $this->get(route('login', ['redirect' => $intended]));
+
+    $response = $this->post(route('login.store'), [
+        'login' => $user->email,
+        'password' => 'password',
+    ]);
+
+    $this->assertAuthenticatedAs($user);
+    $response->assertRedirect($intended);
+});
+
+test('login ignores an off-site redirect target', function () {
+    $user = User::factory()->create();
+
+    $this->get(route('login', ['redirect' => 'https://evil.example.com/phish']));
+
+    $response = $this->post(route('login.store'), [
+        'login' => $user->email,
+        'password' => 'password',
+    ]);
+
+    $this->assertAuthenticatedAs($user);
+    $response->assertRedirect(route('home'));
+});
+
 test('users can logout', function () {
     $user = User::factory()->create();
 

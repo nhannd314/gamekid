@@ -91,8 +91,8 @@
                             </ul>
                         </div>
                     @else
-                        <a href="{{ route('login') }}" class="ms-1 border-bottom border-primary border-2 fs-6 fw-semibold">
-                            Login
+                        <a href="{{ route('login', ['redirect' => url()->full()]) }}" class="text-body ms-1 border-bottom border-2 fw-semibold">
+                            Đăng nhập
                         </a>
                     @endauth
 

@@ -1,4 +1,4 @@
-<div class="col-6 col-md-3">
+<div class="col-6 col-md-3 pb-1">
     <a href="{{ route('game.show', $game->slug) }}" class="h-100 game-card bg-white rounded-3 overflow-hidden d-block shadow hover-bounce">
         <div class="thumbnail" aria-hidden="true">
             <img src="{{ asset('storage/' . $game->thumbnail) }}" loading="lazy"

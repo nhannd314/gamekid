@@ -1,0 +1,262 @@
+.fruitpick-game {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+.fruitpick-game-stats {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.fruitpick-game-stats .stat {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #7a3b12;
+}
+
+.fruitpick-game-stats .stat span {
+    color: #e64a19;
+}
+
+.fruitpick-game-restart {
+    border: none;
+    border-radius: 999px;
+    padding: 8px 20px;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(135deg, #ff9800, #f4511e);
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.fruitpick-game-restart:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(244, 81, 30, 0.35);
+}
+
+.fruitpick-game-board-wrap {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px;
+    border-radius: 28px;
+    background: #fff8f0;
+    border: 3px solid #ffe0b2;
+    min-height: 470px;
+    overflow: hidden;
+}
+
+.fruitpick-game-timer-wrap {
+    width: 100%;
+    height: 10px;
+    background: #eee;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.fruitpick-game-timer-bar {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to right, #ff9800, #ffc107);
+    transition: width 0.1s linear, background-color 0.3s;
+}
+
+.fruitpick-game-timer-bar.warning {
+    background: linear-gradient(to right, #fb8c00, #ffca28);
+}
+
+.fruitpick-game-timer-bar.danger {
+    background: linear-gradient(to right, #f44336, #ef5350);
+}
+
+.fruitpick-game-status {
+    text-align: center;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #7a3b12;
+}
+
+.fruitpick-word-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 20px;
+    background: #fff;
+    border: 3px dashed #ff9800;
+    border-radius: 18px;
+}
+
+.fruitpick-word {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #e64a19;
+}
+
+.fruitpick-board {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(92px, 1fr));
+    gap: 12px;
+    padding: 4px;
+    flex: 1;
+    align-content: start;
+}
+
+.fruitpick-card {
+    aspect-ratio: 1;
+    width: 100%;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border: 2px solid rgba(0, 0, 0, .12);
+    border-radius: 18px;
+    cursor: pointer;
+    box-shadow: inset 0 -4px 0 rgba(0, 0, 0, .08), 0 3px 6px rgba(0, 0, 0, .12);
+    transition: transform .1s ease, box-shadow .1s ease, opacity .1s ease;
+}
+
+.fruitpick-card-emoji {
+    font-size: 3rem;
+    line-height: 1;
+}
+
+.fruitpick-card:hover {
+    transform: scale(1.08);
+}
+
+.fruitpick-card:active {
+    transform: scale(.94);
+}
+
+.fruitpick-card.correct {
+    box-shadow: 0 0 0 4px #fff, 0 0 24px 6px rgba(46, 204, 113, .9);
+}
+
+.fruitpick-card.wrong {
+    opacity: .35;
+    box-shadow: 0 0 0 4px #fff, 0 0 24px 6px rgba(255, 77, 77, .9);
+}
+
+.fruitpick-start {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 24px;
+    background: rgba(255, 248, 240, .95);
+}
+
+.fruitpick-start-btn {
+    border: none;
+    padding: 14px 32px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #7a3b12;
+    background-color: #ffe0b2;
+    border-radius: 999px;
+    box-shadow: 0 .4rem 1rem rgba(0, 0, 0, .2);
+    cursor: pointer;
+    transition: transform .2s;
+}
+
+.fruitpick-start-btn:hover {
+    transform: scale(1.06);
+}
+
+.fruitpick-game-message {
+    position: absolute;
+    inset: 0;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(255, 248, 240, .92);
+    border-radius: 28px;
+    animation: fruitpick-message-fade .25s ease;
+}
+
+.fruitpick-message-card {
+    max-width: 320px;
+    padding: 32px 40px;
+    border-radius: 20px;
+    background: #fff;
+    border: 2px dashed #f4511e;
+    text-align: center;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .2);
+    animation: fruitpick-message-pop .3s ease;
+}
+
+.fruitpick-message-emoji {
+    font-size: 3rem;
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.fruitpick-message-text {
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #e64a19;
+}
+
+.fruitpick-message-ok {
+    border: none;
+    border-radius: 999px;
+    padding: 10px 28px;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(135deg, #ff9800, #f4511e);
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.fruitpick-message-ok:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(244, 81, 30, 0.35);
+}
+
+@keyframes fruitpick-message-fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fruitpick-message-pop {
+    from { transform: scale(.85); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@media (max-width: 480px) {
+    .fruitpick-game-board-wrap {
+        padding: 12px;
+        min-height: 420px;
+    }
+
+    .fruitpick-board {
+        grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+        gap: 8px;
+    }
+
+    .fruitpick-card-emoji {
+        font-size: 2.3rem;
+    }
+
+    .fruitpick-word {
+        font-size: 1.5rem;
+    }
+
+    .fruitpick-game-status {
+        font-size: 0.95rem;
+    }
+}
